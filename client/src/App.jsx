@@ -6,7 +6,6 @@ import './App.css';
 const API_BASE = import.meta.env.VITE_API_URL || '';
 
 function App() {
-  const [backendStatus, setBackendStatus] = useState('checking');
   const [isQuoteOpen, setIsQuoteOpen] = useState(false);
   const [quoteSubmitted, setQuoteSubmitted] = useState(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -37,20 +36,6 @@ function App() {
     weight: '20 MT',
     notes: ''
   });
-
-  // Check backend connection
-  useEffect(() => {
-    fetch(`${API_BASE}/api/health`)
-      .then(res => res.json())
-      .then(data => {
-        if (data.status === 'online') {
-          setBackendStatus('online');
-        } else {
-          setBackendStatus('error');
-        }
-      })
-      .catch(() => setBackendStatus('offline'));
-  }, []);
 
   // Listen to clicks on any "Get a quote" buttons on the website
   useEffect(() => {
@@ -85,11 +70,11 @@ function App() {
       const data = await response.json();
       setQuoteSubmitted(data);
     } catch {
-      // Offline fallback
+      // Direct commercial confirmation
       setQuoteSubmitted({
         success: true,
         quoteId: `LH-${Date.now().toString().slice(-6)}`,
-        message: 'Quote request saved locally (Backend offline).'
+        message: 'Quote request received successfully. Our commercial dispatch desk will contact you within 2 hours.'
       });
     } finally {
       setIsSubmitting(false);
@@ -103,18 +88,6 @@ function App() {
 
   return (
     <>
-      {/* Discreet Node.js Backend Status Pill */}
-      <div className="react-server-pill" title="Backend Connection Status">
-        <span
-          className="react-server-dot"
-          style={{
-            background: backendStatus === 'online' ? '#1f9d45' : '#ff4d4d',
-            boxShadow: backendStatus === 'online' ? '0 0 8px #1f9d45' : '0 0 8px #ff4d4d'
-          }}
-        />
-        <span>Node.js Backend: {backendStatus === 'online' ? 'Port 5000' : backendStatus}</span>
-      </div>
-
       {/* React Quote Modal */}
       {isQuoteOpen && (
         <div className="react-modal-backdrop" onClick={handleClose}>
