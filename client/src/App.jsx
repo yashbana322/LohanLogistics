@@ -1,3 +1,4 @@
+// Lohan Logistics Multimodal Platform v1.0.1
 import { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import StringTieFooter from '@/components/ui/string-tie-footer';
