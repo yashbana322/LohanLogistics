@@ -1,0 +1,1288 @@
+<!doctype html>
+<!--
+  Lohan Logistics — Multimodal Freight & Corridors
+  Original GSAP architecture template by 8B. MIT License.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=5.0, user-scalable=yes">
+<title>Lohan Logistics | Multimodal Freight &amp; Strategic Corridors</title>
+<meta name="description" content="Lohan Logistics delivers complete multimodal freight solutions: containerized maritime shipping, dedicated Concor rail rakes, bonded warehousing, and express highway haulage.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2064%2064'%3E%3Crect%20width%3D'64'%20height%3D'64'%20rx%3D'14'%20fill%3D'%231a2430'%2F%3E%3Ctext%20x%3D'32'%20y%3D'45'%20font-family%3D'Arial%2CHelvetica%2Csans-serif'%20font-size%3D'38'%20font-weight%3D'700'%20text-anchor%3D'middle'%20fill%3D'%23ff7a00'%3EL%3C%2Ftext%3E%3C%2Fsvg%3E">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" href="https://fonts.gstatic.com/s/mozillaheadline/v1/QGY4z-UXahmCOps4kyMKGuSA9pYt2_P-w2kFrS88o6dLYTHNYMU.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="https://fonts.gstatic.com/s/mozillatext/v1/SZc-3FrnJ7S7WZIff2mJ7TbD7xNK.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com">
+<style>
+/* latin-ext */
+@font-face {
+  font-family: 'Mozilla Headline';
+  font-style: normal;
+  font-weight: 500 700;
+  font-stretch: 75%;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mozillaheadline/v1/QGY4z-UXahmCOps4kyMKGuSA9pYt2_P-w2kFrS88o6dLYTHDYMVmJQ.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Mozilla Headline';
+  font-style: normal;
+  font-weight: 500 700;
+  font-stretch: 75%;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mozillaheadline/v1/QGY4z-UXahmCOps4kyMKGuSA9pYt2_P-w2kFrS88o6dLYTHNYMU.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Mozilla Text';
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mozillatext/v1/SZc-3FrnJ7S7WZIff2mJ7TbD4RNKuCc.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Mozilla Text';
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mozillatext/v1/SZc-3FrnJ7S7WZIff2mJ7TbD7xNK.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+<style data-8b-part="layers">
+@layer tokens, base, atoms, layout, sections, scenes;
+</style>
+<style data-8b-part="tokens">
+@layer tokens {
+:root {
+  --color-1: #d9e4f0;
+  --color-2: #1a2430;
+  --color-3: #f3eeed;
+  --color-4: #ff7a00;
+  --color-5: #e7a36a;
+  --color-6: #3f6964;
+  --color-7: #26419b;
+  --color-8: #d22630;
+  --color-9: #ffffff;
+  --color-10: #475463;
+  --color-11: #a9c1dd;
+  --color-12: #e6dad8;
+  --font-1: "Mozilla Headline", "Mozilla Headline Fallback", "Arial Narrow", Arial, sans-serif;
+  --font-2: "Mozilla Text", "Mozilla Text Fallback", Arial, sans-serif;
+  --space-1: clamp(20px, 4vw, 64px);
+  --space-2: clamp(72px, 11vw, 160px);
+}
+}
+</style>
+<style data-8b-part="base">
+@layer base {
+  /* font fallbacks */
+  @font-face { font-family: "Mozilla Headline Fallback"; src: local("Arial Bold"), local("Arial-BoldMT"), local("Helvetica Bold"); font-weight: 550 799; size-adjust: 71%; ascent-override: 133.7%; descent-override: 36.6%; line-gap-override: 0%; }
+  @font-face { font-family: "Mozilla Text Fallback"; src: local("Arial"), local("ArialMT"), local("Helvetica"); font-weight: 100 549; size-adjust: 110.6%; ascent-override: 85.9%; descent-override: 23.5%; line-gap-override: 0%; }
+  @font-face { font-family: "Mozilla Text Fallback"; src: local("Arial Bold"), local("Arial-BoldMT"), local("Helvetica Bold"); font-weight: 550 799; size-adjust: 101.1%; ascent-override: 93.9%; descent-override: 25.7%; line-gap-override: 0%; }
+  /* end font fallbacks */
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+  html.lenis, html.lenis body { height: auto; }
+  .lenis:not(.lenis-autoToggle).lenis-stopped { overflow: clip; }
+  .lenis [data-lenis-prevent] { overscroll-behavior: contain; }
+  .lenis.lenis-smooth iframe { pointer-events: none; }
+  body { margin: 0; background: var(--color-1); color: var(--color-2); }
+  img { display: block; max-width: 100%; }
+  h1, h2, h3, h4, p, ul, ol, dl, dd, figure, blockquote { margin: 0; }
+  ul, ol { padding: 0; list-style: none; }
+  a { color: inherit; }
+  button, input, select, textarea { font: inherit; color: inherit; }
+  :focus-visible { outline: 3px solid var(--color-2); outline-offset: 3px; }
+  [data-tone="dark"] :focus-visible { outline-color: var(--color-5); }
+  .sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+  main { display: block; }
+}
+</style>
+<style data-8b-part="system">
+@layer atoms {
+.m-text { font-family: var(--font-2); font-size: clamp(16px, 1.05vw + 10px, 18px); font-weight: 400; line-height: 1.55; letter-spacing: 0; text-transform: none; font-style: normal; }
+.m-text-2 { font-family: var(--font-1); font-size: clamp(44px, 5.4vw, 92px); font-weight: 650; font-stretch: 75%; line-height: .93; letter-spacing: -.005em; text-transform: none; font-style: normal; }
+.m-text-3 { font-family: var(--font-1); font-size: clamp(38px, 4.4vw, 72px); font-weight: 620; font-stretch: 75%; line-height: .95; letter-spacing: 0; text-transform: none; font-style: normal; }
+.m-text-4 { font-family: var(--font-2); font-size: 13px; font-weight: 600; line-height: 1.3; letter-spacing: .07em; text-transform: uppercase; font-style: normal; }
+.m-text-5 { font-family: var(--font-2); font-size: clamp(18px, 1.2vw + 10px, 22px); font-weight: 450; line-height: 1.42; letter-spacing: 0; text-transform: none; font-style: normal; }
+.m-text-6 { font-family: var(--font-1); font-size: clamp(24px, 1.6vw + 12px, 34px); font-weight: 600; font-stretch: 75%; line-height: 1.02; letter-spacing: .005em; text-transform: none; font-style: normal; }
+
+.m-btn { position: relative; isolation: isolate; display: inline-flex; align-items: center; justify-content: center; min-height: 50px; padding: 0 24px; border: 2px solid var(--color-2); background: var(--color-2); color: var(--color-9); font-family: var(--font-2); font-size: 16px; font-weight: 600; line-height: 1.1; letter-spacing: .01em; text-decoration: none; overflow: hidden; cursor: pointer; }
+.m-btn::before { content: ""; position: absolute; inset: 0; z-index: -1; background: repeating-linear-gradient(to bottom, var(--color-4) 0 7px, var(--color-5) 7px 11px, var(--color-4) 11px 15px, var(--color-8) 15px 17px, var(--color-4) 17px 24px); transform: scaleX(0); transform-origin: 0 50%; transition: transform .45s cubic-bezier(.7, 0, .2, 1); }
+.m-btn__label { position: relative; }
+@media (hover: hover) {
+  .m-btn:hover::before { transform: scaleX(1); }
+  .m-btn:hover { border-color: var(--color-4); }
+}
+.m-btn-2 { position: relative; isolation: isolate; display: inline-flex; align-items: center; justify-content: center; min-height: 50px; padding: 0 22px; border: 2px solid var(--color-2); background: transparent; color: var(--color-2); font-family: var(--font-2); font-size: 16px; font-weight: 600; line-height: 1.1; letter-spacing: .01em; text-decoration: none; overflow: hidden; cursor: pointer; transition: color .3s; }
+.m-btn-2::before { content: ""; position: absolute; inset: 0; z-index: -1; background: repeating-linear-gradient(to bottom, var(--color-2) 0 7px, var(--color-7) 7px 10px, var(--color-2) 10px 16px, var(--color-6) 16px 18px, var(--color-2) 18px 24px); transform: scaleX(0); transform-origin: 0 50%; transition: transform .45s cubic-bezier(.7, 0, .2, 1); }
+@media (hover: hover) {
+  .m-btn-2:hover { color: var(--color-9); }
+  .m-btn-2:hover::before { transform: scaleX(1); }
+}
+.m-btn-3 { position: relative; isolation: isolate; display: inline-flex; align-items: center; justify-content: center; min-height: 50px; padding: 0 24px; border: 2px solid var(--color-5); background: var(--color-5); color: var(--color-2); font-family: var(--font-2); font-size: 16px; font-weight: 600; line-height: 1.1; letter-spacing: .01em; text-decoration: none; overflow: hidden; cursor: pointer; }
+.m-btn-3::before { content: ""; position: absolute; inset: 0; z-index: -1; background: repeating-linear-gradient(to bottom, var(--color-9) 0 7px, var(--color-3) 7px 11px, var(--color-9) 11px 15px, var(--color-8) 15px 17px, var(--color-9) 17px 24px); transform: scaleX(0); transform-origin: 0 50%; transition: transform .45s cubic-bezier(.7, 0, .2, 1); }
+@media (hover: hover) {
+  .m-btn-3:hover::before { transform: scaleX(1); }
+  .m-btn-3:hover { border-color: var(--color-9); }
+}
+.m-link { color: inherit; text-decoration: none; background-image: linear-gradient(currentColor, currentColor), linear-gradient(var(--color-4), var(--color-4)); background-repeat: no-repeat; background-size: 28% 2px, 0 2px; background-position: 0 100%, 0 calc(100% - 4px); padding-bottom: 6px; transition: background-size .45s cubic-bezier(.7, 0, .2, 1); }
+@media (hover: hover) {
+  .m-link:hover { background-size: 100% 2px, 100% 2px; }
+}
+.m-icon-btn { position: relative; display: inline-grid; place-content: center; gap: 6px; width: 48px; height: 48px; padding: 0; border: 2px solid var(--color-2); background: transparent; color: var(--color-2); cursor: pointer; }
+.m-icon-btn__bar { display: block; width: 22px; height: 2px; background: currentColor; transform-origin: 0 50%; transition: transform .4s cubic-bezier(.7, 0, .2, 1); }
+.m-icon-btn__bar:nth-child(2) { transform: scaleX(.6); }
+@media (hover: hover) {
+  .m-icon-btn:hover .m-icon-btn__bar { transform: scaleX(1.25); }
+  .m-icon-btn:hover .m-icon-btn__bar:nth-child(2) { transform: scaleX(1); }
+}
+.m-block { background: var(--color-3); color: var(--color-2); padding: clamp(20px, 2.4vw, 36px); }
+.m-block-2 { background: var(--color-12); color: var(--color-2); padding: clamp(20px, 2.4vw, 36px); }
+.m-block-3 { background: var(--color-2); color: var(--color-9); padding: clamp(24px, 3.2vw, 56px); }
+.m-photo { position: relative; overflow: hidden; background: var(--color-12); }
+.m-photo__img { width: 100%; height: 100%; object-fit: cover; }
+.m-badge { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-2); font-size: 13px; font-weight: 600; line-height: 1.2; letter-spacing: .06em; text-transform: uppercase; font-style: normal; color: var(--color-2); }
+.m-badge::before { content: ""; width: 18px; height: 6px; background: var(--color-6); }
+.m-badge-2 { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-2); font-size: 13px; font-weight: 600; line-height: 1.2; letter-spacing: .06em; text-transform: uppercase; font-style: normal; color: var(--color-2); }
+.m-badge-2::before { content: ""; width: 18px; height: 6px; background: var(--color-4); }
+.m-field { display: grid; gap: 8px; }
+.m-field__label { font-family: var(--font-2); font-size: 13px; font-weight: 600; line-height: 1.3; letter-spacing: .07em; text-transform: uppercase; font-style: normal; }
+.m-field__input { width: 100%; min-height: 50px; padding: 12px 14px; border: 0; border-bottom: 2px solid var(--color-2); background: var(--color-9); color: var(--color-2); font-family: var(--font-2); font-size: 17px; line-height: 1.4; border-radius: 0; }
+.m-field__input:focus-visible { outline: 3px solid var(--color-7); outline-offset: 2px; }
+textarea.m-field__input { min-height: 120px; resize: vertical; }
+}
+</style>
+<style data-8b-part="layout">
+@layer layout {
+  .wrap { width: min(100% - 2 * var(--space-1), 1360px); margin-inline: auto; }
+}
+</style>
+<style data-8b-part="section:navigation">
+@layer sections {
+  #navigation { position: fixed; inset: 0 0 auto; z-index: 50; display: flex; align-items: center; gap: 24px; height: 72px; padding: 0 var(--space-1); background: var(--color-1); border-bottom: 2px solid var(--color-2); }
+  #navigation .nav__brand { font-family: var(--font-1); font-size: 30px; font-weight: 700; font-stretch: 75%; line-height: 1; letter-spacing: .01em; text-decoration: none; margin-right: auto; display: inline-flex; align-items: center; gap: 10px; }
+  #navigation .nav__mark { display: inline-grid; grid-template-columns: 5px 8px 5px; gap: 3px; height: 26px; align-items: end; }
+  #navigation .nav__mark span { background: var(--color-2); height: 100%; }
+  #navigation .nav__mark span:nth-child(2) { background: var(--color-4); height: 62%; }
+  #navigation .nav__links { display: flex; gap: 26px; }
+  #navigation .nav__links a { font-size: 16px; font-weight: 500; }
+  #navigation .nav__cta { min-height: 44px; }
+  #navigation .nav__toggle { display: none; }
+  #navigation .nav__menu { position: fixed; inset: 0; z-index: 60; background: var(--color-2); color: var(--color-9); padding: 96px var(--space-1) 40px; display: grid; align-content: start; gap: 28px; }
+  #navigation .nav__menu[hidden] { display: none; }
+  #navigation .nav__menu-links { display: grid; gap: 4px; }
+  #navigation .nav__menu-links a { font-family: var(--font-1); font-size: 44px; font-weight: 600; font-stretch: 75%; line-height: 1.15; text-decoration: none; display: block; padding: 4px 0; }
+  #navigation .nav__close { position: absolute; top: 12px; right: var(--space-1); border-color: var(--color-9); color: var(--color-9); }
+  #navigation .nav__menu-stripe { height: 14px; background: linear-gradient(to bottom, var(--color-5) 0 40%, var(--color-4) 40% 70%, var(--color-6) 70% 100%); }
+  @media (prefers-reduced-motion: no-preference) {
+    #navigation { transition: transform .45s cubic-bezier(.6, 0, .2, 1); }
+  }
+  #navigation[data-hidden] { transform: translateY(-100%); }
+  @media (max-width: 900px) {
+    #navigation { height: 64px; }
+    #navigation .nav__links, #navigation .nav__cta { display: none; }
+    #navigation .nav__toggle { display: inline-grid; }
+  }
+}
+</style>
+<style data-8b-part="section:opening">
+@layer sections {
+  #opening { position: relative; background: var(--color-1); overflow-x: clip; }
+  #opening .op__stage { position: sticky; top: 0; height: 100svh; margin-bottom: -100svh; overflow: hidden; container-type: size; z-index: 0; }
+  #opening .op__sky { position: absolute; inset: 0; background: linear-gradient(to bottom, var(--color-11), var(--color-1) 62%); }
+  #opening .op__slab { position: absolute; inset: 0; z-index: 2; clip-path: inset(calc(var(--t) * 1%) calc((99.8 - var(--l) - var(--w)) * 1%) calc(var(--b) * 1%) calc(var(--l) * 1%)); }
+  #opening .op__slab--gap { z-index: 1; clip-path: inset(0% calc((100 - var(--l) - var(--w) / 2) * 1%) 0% calc((var(--l) + var(--w) / 2) * 1%)); }
+  #opening .op__rise { position: absolute; inset: 0; }
+  #opening .op__img { position: absolute; inset: 0; width: 100%; height: 100%; max-width: none; object-fit: cover; object-position: 58% 50%; transform-origin: calc(var(--o) * 1%) 50%; transform: scaleX(64); }
+  #opening .op__slab--gap .op__img { transform: none; }
+  #opening .op__floor { position: absolute; inset: 0; z-index: 3; clip-path: inset(calc(var(--f) * 1%) 0% 0% 0%); --f: 84; --o: 47; }
+  #opening .op__floor .op__img { object-position: 58% 50%; }
+  /* desktop slab geometry, in % of the stage */
+  #opening .op__slab:nth-of-type(2) { --l: 0;    --w: 11;   --t: 13; --b: 16; --o: 26; }
+  #opening .op__slab:nth-of-type(3) { --l: 11;   --w: 9.5;  --t: 20; --b: 26; --o: 33; }
+  #opening .op__slab:nth-of-type(4) { --l: 20.5; --w: 7;    --t: 41; --b: 21; --o: 41; }
+  #opening .op__slab:nth-of-type(5) { --l: 70;   --w: 8;    --t: 31; --b: 29; --o: 61; }
+  #opening .op__slab:nth-of-type(6) { --l: 78;   --w: 12;   --t: 11; --b: 22; --o: 71; }
+  #opening .op__slab:nth-of-type(7) { --l: 90;   --w: 10;   --t: 0;  --b: 16; --o: 86; }
+  #opening .op__slab--gap { --l: 27.5; --w: 42.5; --t: 0; --b: 0; --o: 50; }
+
+  #opening .op__first { position: relative; z-index: 1; height: 100svh; }
+  #opening .op__copy { position: absolute; left: 28.5%; width: 41%; top: max(96px, 15svh); display: grid; justify-items: start; }
+  #opening .op__block { width: 100%; }
+  #opening .op__block--a { padding-top: clamp(26px, 3vw, 44px); }
+  #opening .op__block--b { width: 86%; justify-self: end; }
+  #opening .op__block--c { width: 74%; display: flex; flex-wrap: wrap; gap: 12px; background: var(--color-5); }
+  #opening .op__title { max-width: 11ch; }
+  #opening .op__hold { height: 0; }
+  #opening .op__second { position: relative; z-index: 1; min-height: 100svh; padding: max(120px, 16svh) var(--space-1) max(64px, 10svh); display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: 20px; align-content: center; }
+  #opening .op__manifesto { grid-column: 1 / span 7; display: grid; gap: 26px; }
+  #opening .op__manifesto .m-text-3 { max-width: 14ch; }
+  #opening .op__manifesto .m-text { max-width: 54ch; color: var(--color-9); }
+  #opening .op__facts { grid-column: 9 / span 4; align-self: end; display: grid; gap: 0; padding: 0; }
+  #opening .op__fact { padding: 22px 26px; border-top: 2px solid var(--color-2); }
+  #opening .op__fact:first-child { border-top: 0; }
+  #opening .op__fact:nth-child(2) { margin-left: -14%; background: var(--color-12); }
+  #opening .op__fact dt { margin-bottom: 8px; color: var(--color-10); }
+
+  @media (max-width: 900px) {
+    #opening .op__slab:nth-of-type(2) { --l: 0;  --w: 10; --t: 10; --b: 30; --o: 12; }
+    #opening .op__slab:nth-of-type(3) { --l: 10; --w: 8;  --t: 19; --b: 26; --o: 30; }
+    #opening .op__slab:nth-of-type(4) { --l: 18; --w: 7;  --t: 29; --b: 34; --o: 44; }
+    #opening .op__slab:nth-of-type(5) { --l: 75; --w: 8;  --t: 23; --b: 28; --o: 62; }
+    #opening .op__slab:nth-of-type(6) { --l: 83; --w: 8;  --t: 13; --b: 22; --o: 78; }
+    #opening .op__slab:nth-of-type(7) { --l: 91; --w: 9;  --t: 8;  --b: 18; --o: 92; }
+    #opening .op__slab--gap { --l: 25; --w: 50; }
+    #opening .op__floor { --f: 88; }
+    #opening .op__copy { left: 5%; width: 90%; top: auto; bottom: max(20px, 2.5svh); }
+    #opening .op__block--b { width: 90%; }
+    #opening .op__block--c { width: 100%; }
+    #opening .op__second { grid-template-columns: 1fr; row-gap: 0; padding-top: 96px; }
+    #opening .op__manifesto, #opening .op__facts { grid-column: 1; }
+    #opening .op__facts { width: 88%; justify-self: end; }
+    #opening .op__fact:nth-child(2) { margin-left: -10%; }
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    #opening .op__slab:not(.op__slab--gap) .op__img, #opening .op__floor .op__img { animation: op-drift var(--dur, 8s) ease-in-out infinite alternate; }
+    #opening .op__slab:nth-of-type(2) .op__img { --dur: 7s; --d: 7; }
+    #opening .op__slab:nth-of-type(3) .op__img { --dur: 9s; --d: -6; }
+    #opening .op__slab:nth-of-type(4) .op__img { --dur: 6s; --d: 8; }
+    #opening .op__slab:nth-of-type(5) .op__img { --dur: 8s; --d: -7; }
+    #opening .op__slab:nth-of-type(6) .op__img { --dur: 10s; --d: 6; }
+    #opening .op__slab:nth-of-type(7) .op__img { --dur: 7.5s; --d: -8; }
+    #opening .op__floor .op__img { --dur: 11s; --d: 22; }
+    #opening .op__stage[data-paused] .op__img { animation-play-state: paused; }
+    #opening .op__rise { animation: op-rise .9s cubic-bezier(.2, .7, .2, 1) backwards; }
+    #opening .op__slab:nth-of-type(3) .op__rise { animation-delay: .08s; }
+    #opening .op__slab:nth-of-type(4) .op__rise { animation-delay: .16s; }
+    #opening .op__slab:nth-of-type(5) .op__rise { animation-delay: .12s; }
+    #opening .op__slab:nth-of-type(6) .op__rise { animation-delay: .04s; }
+    #opening .op__slab:nth-of-type(7) .op__rise { animation-delay: .2s; }
+    #opening .op__floor .op__rise { animation-name: op-floor; animation-duration: 1s; }
+    #opening .op__copy > * { animation: op-step .8s cubic-bezier(.2, .7, .2, 1) backwards; }
+    #opening .op__block--b { animation-delay: .1s; --dx: 36px; }
+    #opening .op__block--c { animation-delay: .2s; --dx: -28px; }
+  }
+  @keyframes op-drift { from { transform-origin: calc(var(--o) * 1%) 50%; } to { transform-origin: calc((var(--o) + var(--d, 6)) * 1%) 50%; } }
+  @keyframes op-rise { from { clip-path: inset(100% 0% 0% 0%); } to { clip-path: inset(0% 0% 0% 0%); } }
+  @keyframes op-floor { from { clip-path: inset(0% 100% 0% 0%); } to { clip-path: inset(0% 0% 0% 0%); } }
+  @keyframes op-step { from { transform: translateX(var(--dx, -40px)); } }
+}
+</style>
+<style data-8b-part="scene-style:opening">
+@layer scenes {
+  @media (prefers-reduced-motion: no-preference) {
+    #opening[data-opening] .op__hold { height: 70svh; }
+  }
+}
+</style>
+<style data-8b-part="section:buildings">
+@layer sections {
+  #buildings { position: relative; background: var(--color-1); padding: var(--space-2) 0 calc(var(--space-2) * .6); }
+  #buildings .bl__pin { position: relative; }
+  #buildings .bl__track { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 56px 2.6vw; padding: 0 var(--space-1); }
+  #buildings .bl__item { flex: none; width: calc(var(--plot) * 4.6vw); }
+  #buildings .bl__item--head { width: max(300px, 30vw); display: grid; gap: 22px; align-content: end; }
+  #buildings .bl__item--end { width: max(260px, 22vw); display: grid; gap: 18px; align-content: end; }
+  #buildings .bl__photo { position: relative; overflow: hidden; height: calc(var(--h) * 1svh); background: var(--color-12); }
+  #buildings .bl__shift { position: absolute; inset: 0 -8%; }
+  #buildings .bl__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  #buildings .bl__plate { height: 200px; padding-top: 16px; display: grid; gap: 6px; align-content: start; border-top: 4px solid var(--color-2); }
+  #buildings .bl__plate .m-text-4 { color: var(--color-10); }
+  #buildings .bl__plate p:last-child { font-size: 15px; line-height: 1.45; max-width: 36ch; }
+  #buildings .bl__pavement { height: 18px; margin-top: 40px; background: linear-gradient(to bottom, var(--color-2) 0 34%, var(--color-5) 34% 67%, var(--color-6) 67% 100%); }
+  @media (max-width: 900px) {
+    #buildings .bl__item { width: min(84vw, calc(var(--plot) * 10vw)); }
+    #buildings .bl__item--head, #buildings .bl__item--end { width: 84vw; }
+    #buildings .bl__photo { height: calc(var(--h) * .9svh); }
+    #buildings .bl__plate { height: 214px; }
+  }
+}
+</style>
+<style data-8b-part="scene-style:buildings">
+@layer scenes {
+  @media (prefers-reduced-motion: no-preference) {
+    #buildings[data-walk] { padding: 0; }
+    #buildings[data-walk] .bl__pin { height: 100svh; display: flex; flex-direction: column; justify-content: flex-end; padding-bottom: 6svh; overflow: hidden; }
+    #buildings[data-walk] .bl__track { flex-wrap: nowrap; width: max-content; }
+    #buildings[data-walk] .bl__pavement { margin-top: 0; }
+  }
+  @media (prefers-reduced-motion: no-preference) and (max-width: 900px) {
+    #buildings[data-walk] .bl__pin { justify-content: center; padding-bottom: 0; }
+  }
+}
+</style>
+<style data-8b-part="section:scan">
+@layer sections {
+  #scan { background: var(--color-2); color: var(--color-9); padding: var(--space-2) var(--space-1); }
+  #scan .sc__grid { display: grid; grid-template-columns: minmax(0, 34fr) minmax(0, 66fr); grid-template-areas: "head stage" "steps stage"; column-gap: 4vw; max-width: 1440px; margin: 0 auto; }
+  #scan .sc__head { grid-area: head; display: grid; gap: 22px; align-content: start; padding-bottom: 10svh; }
+  #scan .sc__head .m-text-5 { color: var(--color-1); }
+  #scan .sc__stage { grid-area: stage; }
+  #scan .sc__frame { position: sticky; top: 12svh; height: 76svh; }
+  #scan .sc__photo, #scan .sc__smear { position: absolute; inset: 0 0 46px 0; }
+  #scan .sc__photo .m-photo__img { object-position: 50% 40%; }
+  #scan .sc__smear { overflow: hidden; clip-path: inset(0% 100% 0% 0%); }
+  #scan .sc__smear img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 40%; transform-origin: 0% 50%; transform: scaleX(24); }
+  #scan .sc__line { position: absolute; top: -12px; bottom: 34px; left: 0; width: 3px; margin-left: -1px; background: var(--color-8); }
+  #scan .sc__axis { position: absolute; left: 0; right: 0; bottom: 0; height: 34px; border-top: 2px solid var(--color-1); display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  #scan .sc__tick { padding-top: 9px; color: var(--color-1); }
+  #scan .sc__tick[data-lit] { color: var(--color-5); }
+  #scan .sc__steps { grid-area: steps; display: grid; }
+  #scan .sc__step { min-height: 40svh; padding: 20px 0 32px 24px; border-left: 3px solid var(--color-10); display: grid; gap: 10px; align-content: start; }
+  #scan .sc__step[data-lit] { border-left-color: var(--color-5); }
+  #scan .sc__time { color: var(--color-5); }
+  #scan .sc__step p:last-child { max-width: 38ch; }
+  @media (max-width: 900px) {
+    #scan .sc__grid { grid-template-columns: minmax(0, 1fr); grid-template-areas: "head" "stage" "steps"; }
+    #scan .sc__head { padding-bottom: 32px; }
+    #scan .sc__stage { position: sticky; top: 0; z-index: 2; background: var(--color-2); padding: 10px 0 14px; }
+    #scan .sc__frame { position: relative; top: 0; height: 38svh; }
+    #scan .sc__photo, #scan .sc__smear { bottom: 40px; }
+    #scan .sc__tick { font-size: 11px; }
+    #scan .sc__step { min-height: 34svh; padding-top: 24px; }
+  }
+}
+</style>
+<style data-8b-part="section:register">
+@layer sections {
+  #register { background: var(--color-9); padding: var(--space-2) var(--space-1); overflow-x: clip; }
+  #register .rg__inner { max-width: 1360px; margin: 0 auto; display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: 40px 5vw; align-items: start; }
+  #register .rg__head { display: grid; gap: 22px; justify-items: start; }
+  #register .rg__stripes { display: grid; gap: 4px; width: 100%; }
+  #register .rg__stripes span { display: block; transform-origin: 50% 0; }
+  #register .rg__stripes span:nth-child(1) { height: 12px; background: var(--color-5); }
+  #register .rg__stripes span:nth-child(2) { height: 7px; background: var(--color-4); }
+  #register .rg__stripes span:nth-child(3) { height: 4px; background: var(--color-6); }
+  #register .rg__table { width: 100%; border-collapse: collapse; }
+  #register .rg__table th { text-align: left; padding: 0 14px 12px 0; border-bottom: 3px solid var(--color-2); color: var(--color-10); }
+  #register .rg__table td { padding: 18px 14px 18px 0; border-bottom: 1px solid var(--color-10); vertical-align: top; }
+  #register .rg__table td:first-child { font-weight: 600; }
+  #register .rg__note { grid-column: 2; color: var(--color-10); font-size: 15px; }
+  @media (max-width: 900px) {
+    #register .rg__inner { grid-template-columns: minmax(0, 1fr); }
+    #register .rg__note { grid-column: 1; }
+    #register .rg__table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+    #register .rg__table tr { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 12px; padding: 16px 0; border-bottom: 1px solid var(--color-10); }
+    #register .rg__table td { border: 0; padding: 4px 0; }
+    #register .rg__table td:first-child { grid-column: 1 / -1; padding-bottom: 8px; }
+    #register .rg__table td:last-child { grid-column: 1 / -1; padding-top: 10px; }
+    #register .rg__table td[data-label]:not(:first-child):not(:last-child)::before { content: attr(data-label); display: block; font-size: 12px; font-weight: 600; letter-spacing: .07em; text-transform: uppercase; color: var(--color-10); }
+  }
+}
+</style>
+<style data-8b-part="section:colours">
+@layer sections {
+  #colours { background: var(--color-1); }
+  #colours .co__head { padding: var(--space-2) var(--space-1) 56px; display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: 24px 6vw; align-items: end; max-width: 1440px; margin: 0 auto; }
+  #colours .co__band { position: relative; min-height: max(120px, 15svh); display: grid; align-items: center; }
+  #colours .co__fill { position: absolute; inset: 0; transform-origin: 50% 0; background: var(--co-band); }
+  #colours .co__label { position: relative; display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 5fr) minmax(0, 2fr); gap: 12px 3vw; align-items: baseline; padding: 26px var(--space-1); max-width: 1440px; width: 100%; margin: 0 auto; }
+  #colours .co__label p { max-width: 50ch; }
+  #colours .co__band--sand { --co-band: var(--color-5); color: var(--color-2); }
+  #colours .co__band--brick { --co-band: var(--color-4); color: var(--color-9); }
+  #colours .co__band--door { --co-band: var(--color-6); color: var(--color-9); }
+  #colours .co__band--plaster { --co-band: var(--color-12); color: var(--color-2); }
+  #colours .co__band--tram { --co-band: var(--color-7); color: var(--color-9); }
+  #colours .co__band--night { --co-band: var(--color-2); color: var(--color-9); }
+  #colours .co__band--night .co__fill { border-top: 6px solid var(--color-8); }
+  @media (max-width: 900px) {
+    #colours .co__head { grid-template-columns: minmax(0, 1fr); }
+    #colours .co__label { grid-template-columns: minmax(0, 1fr); padding-block: 22px; }
+  }
+}
+</style>
+<style data-8b-part="section:neighbours">
+@layer sections {
+  #neighbours { background: var(--color-1); padding: var(--space-2) var(--space-1); overflow-x: clip; }
+  #neighbours .nb__inner { display: grid; grid-template-columns: minmax(0, 8fr) minmax(0, 3fr); gap: 48px 4vw; max-width: 1440px; margin: 0 auto; align-items: end; }
+  #neighbours .nb__title { grid-column: 1 / -1; max-width: 16ch; }
+  #neighbours .nb__quotes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: end; }
+  #neighbours .nb__quote { display: grid; gap: 20px; align-content: start; }
+  #neighbours .nb__quote:nth-child(2) { margin-bottom: 140px; }
+  #neighbours .nb__quote:nth-child(3) { margin-bottom: 64px; }
+  #neighbours .nb__quote blockquote p { font-size: clamp(18px, 1.1vw + 8px, 21px); line-height: 1.45; }
+  #neighbours .nb__quote figcaption { display: grid; gap: 2px; }
+  #neighbours .nb__quote figcaption span:last-child { font-size: 15px; }
+  #neighbours .nb__photo { height: 68svh; }
+  #neighbours .nb__floor { grid-column: 1 / -1; height: 14px; margin-top: -48px; background: linear-gradient(to bottom, var(--color-2) 0 40%, var(--color-6) 40% 70%, var(--color-5) 70% 100%); }
+  @media (max-width: 900px) {
+    #neighbours .nb__inner { grid-template-columns: minmax(0, 1fr); }
+    #neighbours .nb__quotes { grid-template-columns: minmax(0, 1fr); }
+    #neighbours .nb__quote:nth-child(1) { margin-right: 10%; }
+    #neighbours .nb__quote:nth-child(2) { margin: 0 0 0 10%; }
+    #neighbours .nb__quote:nth-child(3) { margin: 0 5%; }
+    #neighbours .nb__photo { height: 54svh; }
+    #neighbours .nb__floor { margin-top: -48px; }
+  }
+}
+</style>
+<style data-8b-part="section:floors">
+@layer sections {
+  #floors { background: var(--color-2); color: var(--color-9); padding: var(--space-2) var(--space-1); }
+  #floors .fl__grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); grid-template-areas: "stage head" "stage list"; column-gap: 6vw; max-width: 1300px; margin: 0 auto; }
+  #floors .fl__head { grid-area: head; display: grid; gap: 22px; padding-bottom: 8svh; }
+  #floors .fl__head .m-text-5 { color: var(--color-1); }
+  #floors .fl__stage { grid-area: stage; }
+  #floors .fl__frame { position: sticky; top: 11svh; height: 78svh; max-width: 100%; aspect-ratio: .56; margin: 0 auto; }
+  #floors .fl__slice { position: absolute; inset: 0; clip-path: inset(calc(var(--a) * 1%) 0% calc((100 - var(--z)) * 1%) 0%); }
+  #floors .fl__slice img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 46% 62%; }
+  #floors .fl__slice:nth-child(1) { --a: 0;  --z: 22; }
+  #floors .fl__slice:nth-child(2) { --a: 22; --z: 34; }
+  #floors .fl__slice:nth-child(3) { --a: 34; --z: 46; }
+  #floors .fl__slice:nth-child(4) { --a: 46; --z: 58; }
+  #floors .fl__slice:nth-child(5) { --a: 58; --z: 70; }
+  #floors .fl__slice:nth-child(6) { --a: 70; --z: 82; }
+  #floors .fl__slice:nth-child(7) { --a: 82; --z: 100; }
+  #floors .fl__list { grid-area: list; display: grid; }
+  #floors .fl__floor { min-height: 30svh; display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 8px 24px; align-content: start; padding: 22px 0 36px; border-top: 3px solid var(--color-10); }
+  #floors .fl__floor[data-active] { border-top-color: var(--color-5); }
+  #floors .fl__level { color: var(--color-5); padding-top: 8px; }
+  #floors .fl__level { grid-column: 1; grid-row: 1 / span 2; }
+  #floors .fl__floor h3, #floors .fl__floor p:last-child { grid-column: 2; }
+  #floors .fl__floor p:last-child { max-width: 44ch; }
+  @media (max-width: 900px) {
+    #floors .fl__grid { grid-template-columns: minmax(0, 1fr); grid-template-areas: "head" "stage" "list"; }
+    #floors .fl__head { padding-bottom: 28px; }
+    #floors .fl__stage { position: sticky; top: 0; z-index: 2; background: var(--color-2); padding: 10px 0 14px; }
+    #floors .fl__frame { position: relative; top: 0; height: 44svh; }
+    #floors .fl__floor { grid-template-columns: minmax(0, 1fr); min-height: 30svh; }
+    #floors .fl__level, #floors .fl__floor h3, #floors .fl__floor p:last-child { grid-column: 1; grid-row: auto; }
+  }
+}
+</style>
+<style data-8b-part="section:studio">
+@layer sections {
+  #studio { background: var(--color-9); padding: var(--space-2) var(--space-1); overflow-x: clip; }
+  #studio .st__head { max-width: 1360px; margin: 0 auto 64px; display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 5fr); gap: 24px 6vw; align-items: end; }
+  #studio .st__row { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 1.6vw; align-items: end; max-width: 1360px; margin: 0 auto; }
+  #studio .st__frame { height: calc(var(--h) * 1svh); }
+  #studio .st__frame .m-photo__img { object-position: 50% 30%; }
+  #studio .st__person:nth-child(1) { --h: 58; }
+  #studio .st__person:nth-child(2) { --h: 44; }
+  #studio .st__person:nth-child(3) { --h: 52; }
+  #studio .st__person:nth-child(4) { --h: 39; }
+  #studio .st__person:nth-child(5) { --h: 48; }
+  #studio .st__name { margin-top: 14px; padding-top: 12px; border-top: 4px solid var(--color-2); display: grid; gap: 4px; min-height: 92px; align-content: start; }
+  #studio .st__name span { font-size: 15px; color: var(--color-10); }
+  @media (max-width: 900px) {
+    #studio .st__head { grid-template-columns: minmax(0, 1fr); }
+    #studio .st__row { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px 14px; }
+    #studio .st__frame { height: calc(var(--h) * .62svh); }
+  }
+}
+</style>
+<style data-8b-part="section:faq">
+@layer sections {
+  #faq { background: var(--color-1); padding: var(--space-2) var(--space-1); overflow-x: clip; }
+  #faq .fq__inner { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 40px 6vw; max-width: 1300px; margin: 0 auto; align-items: start; }
+  #faq .fq__head { display: grid; gap: 22px; justify-items: start; }
+  #faq .fq__list { border-bottom: 2px solid var(--color-2); }
+  #faq .fq__item { border-top: 2px solid var(--color-2); }
+  #faq .fq__item summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 22px 0; }
+  #faq .fq__item summary::-webkit-details-marker { display: none; }
+  #faq .fq__icon { position: relative; flex: none; width: 22px; height: 22px; }
+  #faq .fq__icon::before, #faq .fq__icon::after { content: ""; position: absolute; left: 0; top: 10px; width: 22px; height: 2px; background: currentColor; transition: transform .4s cubic-bezier(.7, 0, .2, 1); }
+  #faq .fq__icon::after { transform: rotate(90deg); }
+  #faq .fq__item[open] .fq__icon::after { transform: rotate(0deg) scaleX(.5); }
+  @media (hover: hover) {
+    #faq .fq__item summary:hover .fq__icon::before { transform: scaleX(1.25); }
+  }
+  #faq .fq__item p { padding: 0 48px 26px 0; max-width: 60ch; }
+  @media (max-width: 900px) {
+    #faq .fq__inner { grid-template-columns: minmax(0, 1fr); }
+    #faq .fq__item p { padding-right: 0; }
+  }
+}
+</style>
+<style data-8b-part="section:contact">
+@layer sections {
+  #contact { background: var(--color-2); color: var(--color-9); padding: var(--space-2) 0; overflow-x: clip; }
+  #contact .ct__stage { display: grid; grid-template-columns: minmax(0, 22fr) minmax(0, 52fr) minmax(0, 22fr); gap: 2vw; align-items: stretch; }
+  #contact .ct__slab { position: relative; overflow: hidden; }
+  #contact .ct__slab img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  #contact .ct__slab--l img { object-position: 30% 50%; }
+  #contact .ct__slab--r img { object-position: 82% 50%; }
+  #contact .ct__form { display: grid; gap: 22px; align-content: start; }
+  #contact .ct__form .m-text-5 { max-width: 44ch; }
+  #contact .ct__form :focus-visible { outline-color: var(--color-2); }
+  #contact .ct__fields { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 20px; }
+  #contact .ct__fields .ct__wide { grid-column: 1 / -1; }
+  #contact .ct__status { padding: 14px 16px; background: var(--color-5); color: var(--color-2); font-weight: 600; }
+  #contact .ct__details { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 28px 3vw; padding: 56px var(--space-1) 0; max-width: 1440px; margin: 0 auto; }
+  #contact .ct__details dt { color: var(--color-5); margin-bottom: 8px; }
+  #contact .ct__details dd { color: var(--color-9); }
+  @media (max-width: 900px) {
+    #contact .ct__stage { grid-template-columns: minmax(0, 9fr) minmax(0, 82fr) minmax(0, 9fr); gap: 0; }
+    #contact .ct__fields { grid-template-columns: minmax(0, 1fr); }
+    #contact .ct__details { grid-template-columns: minmax(0, 1fr); }
+  }
+}
+</style>
+<style data-8b-part="section:footer">
+@layer sections {
+  #footer { background: var(--color-2); color: var(--color-9); padding: 0 0 36px; }
+  #footer .ft__bands { display: grid; }
+  #footer .ft__bands span { display: block; transform-origin: 50% 0; }
+  #footer .ft__bands span:nth-child(1) { height: 22px; background: var(--color-5); }
+  #footer .ft__bands span:nth-child(2) { height: 10px; background: var(--color-4); }
+  #footer .ft__bands span:nth-child(3) { height: 16px; background: var(--color-6); }
+  #footer .ft__bands span:nth-child(4) { height: 4px; background: var(--color-8); }
+  #footer .ft__mark { display: block; padding: 40px var(--space-1) 0; font-family: var(--font-1); font-weight: 700; font-stretch: 75%; line-height: .82; letter-spacing: -.01em; font-size: min(34vw, calc((100vw - 2 * var(--space-1)) / (var(--len) * .385))); color: var(--color-1); }
+  #footer .ft__grid { display: grid; grid-template-columns: minmax(0, 4fr) repeat(3, minmax(0, 2fr)); gap: 28px 4vw; padding: 48px var(--space-1) 0; }
+  #footer .ft__grid ul { display: grid; gap: 8px; }
+  #footer .ft__grid h2 { color: var(--color-5); margin-bottom: 12px; }
+  #footer .ft__legal { padding: 48px var(--space-1) 0; font-size: 14px; color: var(--color-1); }
+  @media (max-width: 900px) {
+    #footer .ft__grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+    #footer .ft__grid > :first-child { grid-column: 1 / -1; }
+  }
+}
+</style>
+
+
+<style data-8b-part="custom-fixes">
+  /* High visibility Lohan CTA & Button styling */
+  #navigation .nav__cta { background: var(--color-4) !important; color: #ffffff !important; }
+  .m-btn { background: var(--color-2); color: #ffffff !important; }
+  .m-btn:hover { color: #ffffff !important; }
+  .m-btn-2 { color: var(--color-2) !important; }
+  .m-btn-2:hover { color: #ffffff !important; }
+  .m-btn-3 { color: var(--color-2) !important; }
+  #buildings .bl__track { display: flex; flex-wrap: nowrap !important; width: max-content !important; }
+  #buildings .bl__pin { height: 100svh; overflow: hidden; }
+
+  /* Mobile Responsive & Resizable Viewport Styling */
+  @media (max-width: 820px) {
+    /* Fleet & Modes cards sizing on mobile */
+    #buildings .bl__track { gap: 24px 16px !important; padding: 0 16px !important; }
+    #buildings .bl__item { width: min(82vw, 320px) !important; }
+    #buildings .bl__item--head { width: min(88vw, 340px) !important; }
+    #buildings .bl__item--end { width: min(85vw, 320px) !important; }
+    #buildings .bl__photo { height: 36svh !important; border-radius: 12px; }
+    #buildings .bl__plate { height: auto !important; min-height: 180px; padding-top: 14px; }
+
+    /* Contact & Freight Quote section on mobile */
+    #contact { padding: 48px 0 !important; }
+    #contact .ct__stage {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 20px !important;
+      padding: 0 16px !important;
+    }
+    #contact .ct__slab {
+      height: 180px !important;
+      border-radius: 16px !important;
+      overflow: hidden !important;
+      width: 100% !important;
+    }
+    #contact .ct__slab--r {
+      display: none !important;
+    }
+    #contact .ct__form {
+      width: 100% !important;
+      padding: 26px 20px !important;
+      border-radius: 16px !important;
+    }
+    #contact .ct__fields {
+      grid-template-columns: 1fr !important;
+      gap: 16px !important;
+    }
+    #contact .ct__details {
+      grid-template-columns: 1fr !important;
+      padding: 36px 16px 0 !important;
+      gap: 20px !important;
+    }
+  }
+
+  /* Pinch-to-zoom & touch responsiveness */
+  html, body {
+    touch-action: pan-x pan-y pinch-zoom;
+  }
+</style>
+
+</head>
+<body class="m-text">
+  <!-- React Mount Root for Status Pill and Quote Modal -->
+  <div id="root"></div>
+
+  
+<!-- navigation: top bar: brand, section links, action CTA; phone menu overlay -->
+<header id="navigation" data-8b-section="navigation">
+  <a class="nav__brand" href="#"><span class="nav__mark" aria-hidden="true"><span></span><span></span><span></span></span>Lohan Logistics</a>
+  <nav aria-label="Main">
+    <ul class="nav__links">
+      <li><a class="m-link" href="#">Overview</a></li>
+      <li><a class="m-link" href="#buildings">Fleet &amp; Modes</a></li>
+      <li><a class="m-link" href="#scan">Telemetry</a></li>
+      <li><a class="m-link" href="#register">Equipment Specs</a></li>
+      <li><a class="m-link" href="#colours">Corridors</a></li>
+      <li><a class="m-link" href="#floors">Lifecycle</a></li>
+      <li><a class="m-link" href="#faq">FAQ</a></li>
+      <li><a class="m-link" href="#/tracking">Live Tracking</a></li>
+    </ul>
+  </nav>
+  <a class="m-btn nav__cta" href="#contact" data-a="quote"><span class="m-btn__label">Request Freight Quote ↗</span></a>
+  <button class="m-icon-btn nav__toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu"><span class="m-icon-btn__bar"></span><span class="m-icon-btn__bar"></span></button>
+  <div class="nav__menu" id="nav-menu" data-lenis-prevent hidden>
+    <button class="m-icon-btn nav__close" type="button" aria-label="Close menu"><span class="m-icon-btn__bar"></span><span class="m-icon-btn__bar"></span></button>
+    <div class="nav__menu-stripe" aria-hidden="true"></div>
+    <ul class="nav__menu-links">
+      <li><a href="#opening">Overview</a></li>
+      <li><a href="#buildings">Fleet &amp; Modes</a></li>
+      <li><a href="#scan">Telemetry &amp; Tracking</a></li>
+      <li><a href="#register">Equipment Specifications</a></li>
+      <li><a href="#colours">Strategic Corridors</a></li>
+      <li><a href="#floors">Cargo Journey</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#contact">Request a Quote</a></li>
+      <li><a href="#/tracking">Live Tracking Network</a></li>
+    </ul>
+  </div>
+</header>
+<div class="arch-main">
+<!-- opening: hero screen: headline on stepped slabs, manifesto and 3 stats (animation: scene:opening) -->
+<section id="opening" data-8b-section="opening" aria-labelledby="op-title">
+  <div class="op__stage" role="img" aria-label="A modern multimodal freight terminal with container stacks, rail tracks and gantry cranes">
+    <div class="op__sky"></div>
+    <div class="op__slab"><div class="op__rise"><img style="background:#a6d9d9" class="op__img" src="https://images.unsplash.com/photo-1788263191133-f97e2749972d?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8MXx8cGFzdGVsJTIwYnVpbGRpbmclMjBzdHJlZXQlMjBwZWRlc3RyaWFufGVufDF8MHx8fDE3OTEyOTUyMjJ8MA&amp;ixlib=rb-4.1.0&amp;auto=format&amp;fit=crop&amp;w=1600&amp;q=60" alt="Container shipping port terminal" width="1600" height="1067" fetchpriority="high"></div></div>
+    <div class="op__slab"><div class="op__rise"><img style="background:#a6d9d9" class="op__img" src="https://images.unsplash.com/photo-1788263191133-f97e2749972d?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8MXx8cGFzdGVsJTIwYnVpbGRpbmclMjBzdHJlZXQlMjBwZWRlc3RyaWFufGVufDF8MHx8fDE3OTEyOTUyMjJ8MA&amp;ixlib=rb-4.1.0&amp;auto=format&amp;fit=crop&amp;w=1600&amp;q=60" alt="Container terminal cranes" width="1600" height="1067"></div></div>
+    <div class="op__slab"><div class="op__rise"><img style="background:#a6d9d9" class="op__img" src="https://images.unsplash.com/photo-1788263191133-f97e2749972d?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8MXx8cGFzdGVsJTIwYnVpbGRpbmclMjBzdHJlZXQlMjBwZWRlc3RyaWFufGVufDF8MHx8fDE3OTEyOTUyMjJ8MA&amp;ixlib=rb-4.1.0&amp;auto=format&amp;fit=crop&amp;w=1600&amp;q=60" alt="Stacked shipping containers" width="1600" height="1067"></div></div>
+    <div class="op__slab"><div class="op__rise"><img style="background:#a6d9d9" class="op__img" src="https://images.unsplash.com/photo-1788263191133-f97e2749972d?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8MXx8cGFzdGVsJTIwYnVpbGRpbmclMjBzdHJlZXQlMjBwZWRlc3RyaWFufGVufDF8MHx8fDE3OTEyOTUyMjJ8MA&amp;ixlib=rb-4.1.0&amp;auto=format&amp;fit=crop&amp;w=1600&amp;q=60" alt="Port logistics vessel" width="1600" height="1067"></div></div>
+    <div class="op__slab"><div class="op__rise"><img style="background:#a6d9d9" class="op__img" src="https://images.unsplash.com/photo-1788263191133-f97e2749972d?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8MXx8cGFzdGVsJTIwYnVpbGRpbmclMjBzdHJlZXQlMjBwZWRlc3RyaWFufGVufDF8MHx8fDE3OTEyOTUyMjJ8MA&amp;ixlib=rb-4.1.0&amp;auto=format&amp;fit=crop&amp;w=1600&amp;q=60" alt="Container freight logistics" width="1600" height="1067"></div></div>
+    <div class="op__slab"><div class="op__rise"><img style="background:#a6d9d9" class="op__img" src="https://images.unsplash.com/photo-1788263191133-f97e2749972d?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8MXx8cGFzdGVsJTIwYnVpbGRpbmclMjBzdHJlZXQlMjBwZWRlc3RyaWFufGVufDF8MHx8fDE3OTEyOTUyMjJ8MA&amp;ixlib=rb-4.1.0&amp;auto=format&amp;fit=crop&amp;w=1600&amp;q=60" alt="Multimodal container rail" width="1600" height="1067"></div></div>
+    <div class="op__slab op__slab--gap"><div class="op__rise"><img style="background:#a6d9d9" class="op__img" src="https://images.unsplash.com/photo-1788263191133-f97e2749972d?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8MXx8cGFzdGVsJTIwYnVpbGRpbmclMjBzdHJlZXQlMjBwZWRlc3RyaWFufGVufDF8MHx8fDE3OTEyOTUyMjJ8MA&amp;ixlib=rb-4.1.0&amp;auto=format&amp;fit=crop&amp;w=1600&amp;q=60" alt="Container yard" width="1600" height="1067"></div></div>
+    <div class="op__floor"><div class="op__rise"><img style="background:#a6d9d9" class="op__img" src="https://images.unsplash.com/photo-1788263191133-f97e2749972d?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8MXx8cGFzdGVsJTIwYnVpbGRpbmclMjBzdHJlZXQlMjBwZWRlc3RyaWFufGVufDF8MHx8fDE3OTEyOTUyMjJ8MA&amp;ixlib=rb-4.1.0&amp;auto=format&amp;fit=crop&amp;w=1600&amp;q=60" alt="Terminal quay" width="1600" height="1067"></div></div>
+  </div>
+  <div class="op__first">
+    <div class="op__copy">
+      <div class="m-block op__block op__block--a"><h1 class="m-text-2 op__title" id="op-title">We power the freight corridors of tomorrow.</h1></div>
+      <div class="m-block-2 op__block op__block--b"><p class="m-text-5">Lohan Logistics delivers complete multimodal freight solutions: containerized maritime shipping, dedicated Concor rail rakes, bonded warehousing, and express highway haulage.</p></div>
+      <div class="m-block op__block op__block--c"><a class="m-btn" href="#buildings"><span class="m-btn__label">Explore Fleet &amp; Modes</span></a><a class="m-btn-2" href="#contact" data-a="quote"><span class="m-btn__label">Request Freight Rate</span></a></div>
+    </div>
+  </div>
+  <div class="op__hold"></div>
+  <div class="op__second" data-tone="dark">
+    <div class="m-block-3 op__manifesto">
+      <h2 class="m-text-3">Global supply chains demand absolute precision at every single mile.</h2>
+      <p class="m-text">From port quay to inland container depots, we orchestrate high-velocity freight with end-to-end satellite telemetry, dedicated customs liaison, and automated terminal handovers. Every container is accounted for, every deadline protected.</p>
+    </div>
+    <dl class="m-block op__facts">
+      <div class="op__fact"><dt class="m-text-4">Network Reach</dt><dd>120+ maritime ports and 45 inland container depots connected across India and global trade hubs.</dd></div>
+      <div class="op__fact"><dt class="m-text-4">Monthly Throughput</dt><dd>Over 5,000 TEU container movements handled with dedicated rail rakes and highway fleets.</dd></div>
+      <div class="op__fact"><dt class="m-text-4">SLA Performance</dt><dd>99.4% on-schedule arrival rate backed by 24/7 centralized dispatch control towers.</dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- buildings: projects walked sideways: five logistics modes (animation: scene:buildings) -->
+<section id="buildings" data-8b-section="buildings" aria-labelledby="bl-title">
+  <div class="bl__pin">
+    <div class="bl__track">
+      <div class="m-block-3 bl__item bl__item--head">
+        <h2 class="m-text-3" id="bl-title">Five core modes, engineered for zero delay</h2>
+        <p class="m-text-5">Walk our multi-modal infrastructure. Each asset configured for maximum container payload, security, and rapid turnaround.</p>
+      </div>
+      <article class="bl__item" style="--plot: 4.1; --h: 60">
+        <div class="bl__photo"><div class="bl__shift"><img style="background:#15163a" class="bl__img" src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Port quay cranes loading container ship" width="1600" height="2137" loading="lazy"></div></div>
+        <div class="bl__plate">
+          <h3 class="m-text-6">Ocean Drayage &amp; Port Handover</h3>
+          <p class="m-text-4">FCL &amp; LCL · Heavy Port Cranes · Active 24/7</p>
+          <p>Direct dockside pickup at JNPT, Chennai, and Kolkata. Automated container manifest filing and expedited customs berth clearance.</p>
+        </div>
+      </article>
+      <article class="bl__item" style="--plot: 6.2; --h: 50">
+        <div class="bl__photo"><div class="bl__shift"><img style="background:#2d4bd6" class="bl__img" src="https://images.unsplash.com/photo-1474487548417-781cb71495f3?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Freight train carrying shipping containers" width="1600" height="2400" loading="lazy"></div></div>
+        <div class="bl__plate">
+          <h3 class="m-text-6">Dedicated Container Rail (Concor)</h3>
+          <p class="m-text-4">45-Wagon Rakes · High-Speed Corridors · Eco-Freight</p>
+          <p>Scheduled block trains linking coastal gateways with inland dry ports. 60% lower carbon footprint than road haulage over 500+ km.</p>
+        </div>
+      </article>
+      <article class="bl__item" style="--plot: 7.8; --h: 44">
+        <div class="bl__photo"><div class="bl__shift"><img class="bl__img" src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Heavy freight container truck on national highway" width="1600" height="2135" loading="lazy" style="background:#ff7a00;object-position: 50% 38%"></div></div>
+        <div class="bl__plate">
+          <h3 class="m-text-6">National Highway Express Fleet</h3>
+          <p class="m-text-4">GPS Telemetry · Air-Ride Suspension · 40+ MT Payload</p>
+          <p>Multi-axle container trailer trucks monitored live via dual satellite telemetry. Real-time geofenced checkpoints from hub to factory dock.</p>
+        </div>
+      </article>
+      <article class="bl__item" style="--plot: 5.5; --h: 56">
+        <div class="bl__photo"><div class="bl__shift"><img style="background:#1f9d45" class="bl__img" src="https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Modern reefer container cold storage facility" width="1600" height="2400" loading="lazy"></div></div>
+        <div class="bl__plate">
+          <h3 class="m-text-6">Reefer &amp; Cold-Chain Solutions</h3>
+          <p class="m-text-4">-25°C to +25°C · Telemetric Data Log · Pharma &amp; Food</p>
+          <p>Integrated genset-backed refrigerated containers with unbroken temperature tracking for pharmaceutical and perishable shipments.</p>
+        </div>
+      </article>
+      <article class="bl__item" style="--plot: 9; --h: 48">
+        <div class="bl__photo"><div class="bl__shift"><img class="bl__img" src="https://images.unsplash.com/photo-1587293852726-70cdb56c2866?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="High bay automated logistics warehouse" width="1600" height="2400" loading="lazy" style="background:#15163a;object-position: 50% 40%"></div></div>
+        <div class="bl__plate">
+          <h3 class="m-text-6">Inland Bonded Warehousing</h3>
+          <p class="m-text-4">Multi-Client Hubs · Cross-Docking · Inventory Cloud</p>
+          <p>Over 850,000 sq.ft. of Grade-A bonded storage facilities positioned adjacent to India's major industrial growth corridors.</p>
+        </div>
+      </article>
+      <div class="m-block bl__item bl__item--end">
+        <p class="m-text-6">Every single shipment is backed by verified SLAs and live GPS checkpoints.</p>
+        <p><a class="m-link" href="#register">View Container Specifications</a></p>
+      </div>
+    </div>
+    <div class="bl__pavement" aria-hidden="true"></div>
+  </div>
+</section>
+
+<!-- scan: telemetry method in four steps beside a scanned photo (animation: scene:scan) -->
+<section id="scan" data-8b-section="scan" data-tone="dark" aria-labelledby="sc-title">
+  <div class="sc__grid">
+    <div class="sc__head">
+      <h2 class="m-text-3" id="sc-title">Real-time dispatch and multimodal telemetry</h2>
+      <p class="m-text-5">Every shipping milestone is scanned, logged, and synced to our central freight control tower. From container stuffing to final consignee delivery, your cargo is visible 24/7.</p>
+    </div>
+    <div class="sc__stage">
+      <div class="sc__frame">
+        <div class="m-photo sc__photo"><img style="background:#c0c0c0" class="m-photo__img" src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&amp;fit=crop&amp;w=1600&amp;q=80" alt="Logistics control tower scanner screen" width="1600" height="1030" loading="lazy"></div>
+        <div class="sc__smear" aria-hidden="true"><img style="background:#c0c0c0" src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&amp;fit=crop&amp;w=1600&amp;q=80" alt="" width="1600" height="1030" loading="lazy"></div>
+        <div class="sc__line" aria-hidden="true"></div>
+        <ol class="sc__axis" aria-hidden="true">
+          <li class="m-text-4 sc__tick">Booking</li>
+          <li class="m-text-4 sc__tick">Gate-In</li>
+          <li class="m-text-4 sc__tick">Transit</li>
+          <li class="m-text-4 sc__tick">Delivery</li>
+        </ol>
+      </div>
+    </div>
+    <ol class="sc__steps">
+      <li class="sc__step">
+        <h3 class="m-text-6">Stuffing &amp; RFID Seal</h3>
+        <p class="m-text-4 sc__time">Hour 01 · Origin Plant</p>
+        <p>Containers are weighed (VGM certified), digitally sealed with electronic RFID bolts, and matched with customs export documentation.</p>
+      </li>
+      <li class="sc__step">
+        <h3 class="m-text-6">Terminal Berth Gate-In</h3>
+        <p class="m-text-4 sc__time">Hour 12 · Port Marine Gate</p>
+        <p>Automated OCR optical scanning routes cargo directly to container crane bays or high-speed dedicated rail rakes.</p>
+      </li>
+      <li class="sc__step">
+        <h3 class="m-text-6">High-Speed Corridor Transit</h3>
+        <p class="m-text-4 sc__time">Day 02 · Overland Transit</p>
+        <p>Continuous GPS pings and geofenced checkpoint alerts track block trains and highway transport across all interstate boundaries.</p>
+      </li>
+      <li class="sc__step">
+        <h3 class="m-text-6">Customs Clear &amp; Final Mile</h3>
+        <p class="m-text-4 sc__time">Day 04 · Consignee Dock</p>
+        <p>Expedited clearance through green-channel customs facilitation, followed by immediate de-stuffing at the destination warehouse.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- register: table of equipment specifications -->
+<section id="register" data-8b-section="register" aria-labelledby="rg-title">
+  <div class="rg__inner">
+    <div class="rg__head" data-8b-motion="step">
+      <div class="rg__stripes" aria-hidden="true"><span data-8b-motion="band"></span><span data-8b-motion="band"></span><span data-8b-motion="band"></span></div>
+      <h2 class="m-text-3" id="rg-title">Equipment &amp; Container Specs</h2>
+      <p class="m-text-5">Complete technical specifications of our operational container fleet, dedicated rail wagons, and specialized heavy-haul road trailers.</p>
+      <a class="m-btn" href="#contact"><span class="m-btn__label">Request Capacity Allocation</span></a>
+    </div>
+    <table class="rg__table">
+      <caption class="sr-only">Lohan Logistics container and multimodal equipment specifications</caption>
+      <thead>
+        <tr><th class="m-text-4" scope="col">Equipment Type</th><th class="m-text-4" scope="col">Internal L x W x H</th><th class="m-text-4" scope="col">Max Payload</th><th class="m-text-4" scope="col">Volume</th><th class="m-text-4" scope="col">Availability</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>20ft Standard Dry Container (20' GP)</td><td data-label="Dimensions">5.90 x 2.35 x 2.39 m</td><td data-label="Payload">28,200 kg</td><td data-label="Volume">33.2 CBM</td><td><span class="m-badge">Nationwide Active</span></td></tr>
+        <tr><td>40ft High Cube Container (40' HC)</td><td data-label="Dimensions">12.03 x 2.35 x 2.69 m</td><td data-label="Payload">28,600 kg</td><td data-label="Volume">76.4 CBM</td><td><span class="m-badge">Nationwide Active</span></td></tr>
+        <tr><td>40ft Refrigerated Reefer Container</td><td data-label="Dimensions">11.58 x 2.29 x 2.50 m</td><td data-label="Payload">29,400 kg</td><td data-label="Volume">67.3 CBM</td><td><span class="m-badge">High Demand</span></td></tr>
+        <tr><td>20ft Flat Rack (Project Machinery)</td><td data-label="Dimensions">5.94 x 2.34 x 2.28 m</td><td data-label="Payload">31,000 kg</td><td data-label="Volume">Open Profile</td><td><span class="m-badge">Ready for Dispatch</span></td></tr>
+        <tr><td>40ft Open Top (Heavy Cargo)</td><td data-label="Dimensions">12.02 x 2.35 x 2.35 m</td><td data-label="Payload">31,500 kg</td><td data-label="Volume">65.5 CBM</td><td><span class="m-badge">Ready for Dispatch</span></td></tr>
+        <tr><td>Dedicated 45-Wagon Rail Rake</td><td data-label="Dimensions">Concor BLC/BLL Wagons</td><td data-label="Payload">2,700 MT</td><td data-label="Volume">90 TEU Rake</td><td><span class="m-badge-2">Daily Block Train</span></td></tr>
+        <tr><td>Multi-Axle Heavy Lowbed Trailer</td><td data-label="Dimensions">15.00 x 3.00 m Platform</td><td data-label="Payload">65,000 kg</td><td data-label="Volume">Project Heavy</td><td><span class="m-badge">Scheduled</span></td></tr>
+        <tr><td>Bonded Cross-Dock Facility (MIHAN)</td><td data-label="Dimensions">Nagpur Central Hub</td><td data-label="Payload">12,000 MT Storage</td><td data-label="Volume">85,000 sq.ft.</td><td><span class="m-badge-2">Operational 24/7</span></td></tr>
+      </tbody>
+    </table>
+    <p class="rg__note">All container units are ISO certified, CSC-safety plated, and pressure-tested prior to stuffing.</p>
+  </div>
+</section>
+
+<!-- colours: strategic logistics corridors (animation: scene:colours) -->
+<section id="colours" data-8b-section="colours" aria-labelledby="co-title">
+  <div class="co__head">
+    <h2 class="m-text-3" id="co-title">Strategic Freight Corridors</h2>
+    <p class="m-text-5">High-volume transit arteries engineered for priority transit. Connecting raw industrial centers with maritime export gateways.</p>
+  </div>
+  <ol class="co__bands">
+    <li class="co__band co__band--sand"><div class="co__fill" aria-hidden="true"></div><div class="co__label"><h3 class="m-text-6">Western Maritime Trunk</h3><p>JNPT Nhava Sheva to Gujarat industrial belt (Mundra, Pipavav, Sanand). Direct container drayage with 18-hour turnaround.</p><p class="m-text-4">JNPT · Ahmedabad · Mundra Port</p></div></li>
+    <li class="co__band co__band--brick"><div class="co__fill" aria-hidden="true"></div><div class="co__label"><h3 class="m-text-6">Northern Industrial Spine</h3><p>Delhi NCR / ICD Tughlakabad to Punjab and Rajasthan trade clusters. Daily double-stack container block train express.</p><p class="m-text-4">Delhi NCR · Ludhiana · Jaipur</p></div></li>
+    <li class="co__band co__band--door"><div class="co__fill" aria-hidden="true"></div><div class="co__label"><h3 class="m-text-6">Central Trans-Shipment Axis</h3><p>Nagpur MIHAN Multi-Modal Cargo Hub. The geographic centroid of India linking north, south, east, and west rail arteries.</p><p class="m-text-4">Nagpur MIHAN · National Hub</p></div></li>
+    <li class="co__band co__band--plaster"><div class="co__fill" aria-hidden="true"></div><div class="co__label"><h3 class="m-text-6">Southern Tech &amp; Auto Belt</h3><p>Chennai Sea Port to Bengaluru ICD Whitefield &amp; Sriperumbudur electronics manufacturing zones.</p><p class="m-text-4">Chennai · Bengaluru · Hyderabad</p></div></li>
+    <li class="co__band co__band--tram"><div class="co__fill" aria-hidden="true"></div><div class="co__label"><h3 class="m-text-6">Eastern Maritime Gateway</h3><p>Kolkata Port Trust &amp; Haldia Deep-Water Docks servicing eastern India, Nepal transit, and Bangladesh cross-border freight.</p><p class="m-text-4">Kolkata Port · Haldia · Dankuni</p></div></li>
+    <li class="co__band co__band--night"><div class="co__fill" aria-hidden="true"></div><div class="co__label"><h3 class="m-text-6">Priority Air &amp; Express Cargo</h3><p>Dedicated air charter handling, urgent critical components, and temperature-controlled medical shipments delivered in under 24 hours.</p><p class="m-text-4">Nationwide Priority Air Transit</p></div></li>
+  </ol>
+</section>
+
+<!-- neighbours: three shipper testimonials with photo -->
+<section id="neighbours" data-8b-section="neighbours" aria-labelledby="nb-title">
+  <div class="nb__inner">
+    <h2 class="m-text-3 nb__title" id="nb-title">Trusted by shippers nationwide</h2>
+    <div class="nb__quotes" data-8b-motion="step">
+      <figure class="m-block nb__quote">
+        <blockquote><p>“Lohan Logistics moved over 400 refrigerated containers during our harvest export rush with zero temperature deviations. Their live telemetric logs gave our European buyers complete peace of mind.”</p></blockquote>
+        <figcaption><strong class="m-text-6">Vikramaditya Singhania</strong><span>VP Supply Chain, AgroCorp Exports</span></figcaption>
+      </figure>
+      <figure class="m-block-2 nb__quote">
+        <blockquote><p>“Their scheduled rail rake service between JNPT and Delhi cut our overland freight transit times by 48 hours and reduced our logistics expenditure by 22% compared to road freight.”</p></blockquote>
+        <figcaption><strong class="m-text-6">Ananya Kulkarni</strong><span>Operations Director, Sterling Automotive</span></figcaption>
+      </figure>
+      <figure class="m-block-3 nb__quote">
+        <blockquote><p>“Port customs clearance used to be our biggest bottleneck. With Lohan's digital green-channel facilitation, our inbound containers clear terminal gates within 4 hours of vessel docking.”</p></blockquote>
+        <figcaption><strong class="m-text-6">Rajesh Mehta</strong><span>Managing Director, Bharat Chem Trade</span></figcaption>
+      </figure>
+    </div>
+    <div class="m-photo nb__photo" data-8b-motion="resolve"><img style="background:#f3f3f3" class="m-photo__img" src="https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Container port terminal at sunset" width="1600" height="1994" loading="lazy"></div>
+    <div class="nb__floor" aria-hidden="true"></div>
+  </div>
+</section>
+
+<!-- floors: 7-step cargo journey slice by slice (animation: scene:floors) -->
+<section id="floors" data-8b-section="floors" data-tone="dark" aria-labelledby="fl-title">
+  <div class="fl__grid">
+    <div class="fl__head">
+      <h2 class="m-text-3" id="fl-title">The Multimodal Cargo Journey</h2>
+      <p class="m-text-5">From factory stuffing to final consignee delivery: trace your cargo through our seven-phase synchronized freight lifecycle.</p>
+    </div>
+    <div class="fl__stage">
+      <div class="fl__frame" role="img" aria-label="A modern container vessel and dockside crane stack">
+        <div class="fl__slice"><img style="background:#f3f3f3" src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="" width="1600" height="2409" loading="lazy"></div>
+        <div class="fl__slice"><img style="background:#f3f3f3" src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="" width="1600" height="2409" loading="lazy"></div>
+        <div class="fl__slice"><img style="background:#f3f3f3" src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="" width="1600" height="2409" loading="lazy"></div>
+        <div class="fl__slice"><img style="background:#f3f3f3" src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="" width="1600" height="2409" loading="lazy"></div>
+        <div class="fl__slice"><img style="background:#f3f3f3" src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="" width="1600" height="2409" loading="lazy"></div>
+        <div class="fl__slice"><img style="background:#f3f3f3" src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="" width="1600" height="2409" loading="lazy"></div>
+        <div class="fl__slice"><img style="background:#f3f3f3" src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="" width="1600" height="2409" loading="lazy"></div>
+      </div>
+    </div>
+    <ol class="fl__list">
+      <li class="fl__floor"><h3 class="m-text-6">Final Mile Consignee Handover</h3><p class="m-text-4 fl__level">Stage 07 · Delivery</p><p>De-stuffing at receiver's warehouse, digital e-POD signature upload, and rapid empty container turnaround.</p></li>
+      <li class="fl__floor"><h3 class="m-text-6">Green-Channel Customs Release</h3><p class="m-text-4 fl__level">Stage 06 · Customs</p><p>Instant online ICEGATE clearance, assessment clearance, and electronic out-of-charge issuance.</p></li>
+      <li class="fl__floor"><h3 class="m-text-6">Inland Depot Cross-Docking</h3><p class="m-text-4 fl__level">Stage 05 · ICD Hub</p><p>Fast intermodal transfer from container rakes onto multi-axle trailers with synchronized yard staging.</p></li>
+      <li class="fl__floor"><h3 class="m-text-6">Dedicated Block Rail Haulage</h3><p class="m-text-4 fl__level">Stage 04 · Rail Transit</p><p>High-speed container train transit across dedicated freight corridors, avoiding highway toll bottlenecks.</p></li>
+      <li class="fl__floor"><h3 class="m-text-6">Ocean Vessel Berth Operations</h3><p class="m-text-4 fl__level">Stage 03 · Port Terminal</p><p>Quayside crane loading, automated vessel stowage balance checks, and bill of lading confirmation.</p></li>
+      <li class="fl__floor"><h3 class="m-text-6">Port Drayage &amp; Customs Gate-In</h3><p class="m-text-4 fl__level">Stage 02 · Marine Gate</p><p>Weighbridge tare certification, VGM certificate validation, and terminal security entry clearance.</p></li>
+      <li class="fl__floor"><h3 class="m-text-6">Factory Stuffing &amp; RFID Seal</h3><p class="m-text-4 fl__level">Stage 01 · Origin</p><p>Clean container positioning at shipper's plant, certified cargo lashing, and tamper-proof GPS e-sealing.</p></li>
+    </ol>
+  </div>
+</section>
+
+
+<!-- faq: freight questions and answers (native <details>) -->
+<section id="faq" data-8b-section="faq" aria-labelledby="fq-title">
+  <div class="fq__inner">
+    <div class="fq__head" data-8b-motion="step">
+      <h2 class="m-text-3" id="fq-title">Frequently Asked Freight Questions</h2>
+      <p class="m-text-5">Clear answers on rates, customs clearance, transit times, and multimodal container positioning.</p>
+    </div>
+    <div class="fq__list">
+      <details class="fq__item"><summary><span class="m-text-6">How quickly can you position an empty container at our factory?</span><span class="fq__icon" aria-hidden="true"></span></summary><p>Within 6 to 12 hours across any of our 8 regional hub corridors. Every container is pre-inspected for seaworthiness, moisture seal integrity, and CSC compliance before dispatch.</p></details>
+      <details class="fq__item"><summary><span class="m-text-6">Do you handle end-to-end customs clearance at ports?</span><span class="fq__icon" aria-hidden="true"></span></summary><p>Yes. Our licensed in-house customs brokerage manages ICEGATE submissions, duty tariff assessments, phytosanitary certificates, and green-channel clearances with zero handover delays.</p></details>
+      <details class="fq__item"><summary><span class="m-text-6">How does your dedicated rail rake service compare with road haulage?</span><span class="fq__icon" aria-hidden="true"></span></summary><p>Dedicated block trains are 25% to 35% more cost-effective over distances exceeding 600 km, bypass highway toll congestion, and offer fixed, guaranteed departure windows.</p></details>
+      <details class="fq__item"><summary><span class="m-text-6">Can we monitor cold-chain temperatures in real time?</span><span class="fq__icon" aria-hidden="true"></span></summary><p>Yes. All reefer containers feature calibrated temperature dataloggers that transmit live telemetry every 5 minutes with automated threshold alerts for pharmaceutical and perishable cargo.</p></details>
+      <details class="fq__item"><summary><span class="m-text-6">What cargo insurance coverage is included?</span><span class="fq__icon" aria-hidden="true"></span></summary><p>All shipments are protected under standard Multimodal Transport Operator (MTO) liabilities, with optional comprehensive all-risk marine cargo coverage available directly upon quote acceptance.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- contact: freight quote form (animation: scene:contact) -->
+<section id="contact" data-8b-section="contact" data-tone="dark" aria-labelledby="ct-title">
+  <div class="ct__stage">
+    <div class="ct__slab ct__slab--l" aria-hidden="true"><img style="background:#1a2430" src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=1600&q=80" alt="Container port cranes" width="1600" height="1067"></div>
+    <form data-8b-placeholder="form" class="m-block ct__form" action="#" method="post" novalidate>
+      <h2 class="m-text-3" id="ct-title">Request a Freight Quote</h2>
+      <p class="m-text-5">Submit your shipping route and container requirements. Our commercial dispatch team replies with optimized rates within 2 hours.</p>
+      <div class="ct__fields">
+        <label class="m-field"><span class="m-field__label">Your Full Name</span><input class="m-field__input" name="name" type="text" autocomplete="name" required placeholder="e.g. Ramesh Patel"></label>
+        <label class="m-field"><span class="m-field__label">Business Email</span><input class="m-field__input" name="email" type="email" autocomplete="email" required placeholder="logistics@company.com"></label>
+        <label class="m-field ct__wide"><span class="m-field__label">Origin &amp; Destination Route</span><input class="m-field__input" name="plot" type="text" autocomplete="street-address" required placeholder="e.g. JNPT Mumbai to ICD Whitefield Bengaluru"></label>
+        <label class="m-field"><span class="m-field__label">Cargo Weight (Metric Tonnes)</span><input class="m-field__input" name="width" type="number" inputmode="decimal" min="1" max="1000" step="0.5" placeholder="e.g. 24 MT"></label>
+        <label class="m-field"><span class="m-field__label">Freight Mode</span><select class="m-field__input" name="role"><option>Full Container Load (FCL)</option><option>Less than Container (LCL)</option><option>Dedicated Rail Block Train</option><option>Reefer Temperature-Controlled</option><option>Over-Dimensional Project Cargo</option></select></label>
+        <label class="m-field ct__wide"><span class="m-field__label">Specific Handling or Commodity Details</span><textarea class="m-field__input" name="message" rows="4" placeholder="Commodity type, target loading date, hazardous materials class, bonded warehousing requirements..."></textarea></label>
+      </div>
+      <p><button class="m-btn" type="submit"><span class="m-btn__label">Send Rate Request ↗</span></button></p>
+      <p class="ct__status" role="status" hidden data-sent-text="Thank you. Your freight request has been logged. Our dispatch team will contact you within 2 hours." data-error-text="Please provide your name, business email, and origin/destination route."></p>
+    </form>
+    <div class="ct__slab ct__slab--r" aria-hidden="true"><img style="background:#1a2430" src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=1600&q=80" alt="Container cargo ship" width="1600" height="1067"></div>
+  </div>
+  <dl class="ct__details">
+    <div><dt class="m-text-4">Central Dispatch HQ</dt><dd>Lohan Logistics Multi-Modal Terminal<br>Sector 18, Gurugram NCR / JNPT Navi Mumbai</dd></div>
+    <div><dt class="m-text-4">Commercial Desk</dt><dd><a data-8b-placeholder="phone" class="m-link" href="tel:+911244567890">+91 124 456 7890</a></dd></div>
+    <div><dt class="m-text-4">Dispatch Email</dt><dd><a data-8b-placeholder="email" class="m-link" href="mailto:dispatch@lohanlogistics.com">dispatch@lohanlogistics.com</a></dd></div>
+    <div><dt class="m-text-4">Operating Hours</dt><dd>Freight Control Tower: 24/7/365 · Port Customs Desk: Mon–Sat 8:00–20:00</dd></div>
+  </dl>
+</section>
+</div>
+
+<div id="string-tie-footer-root"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.3.27/dist/lenis.min.js"></script>
+<script data-8b-part="section-script:navigation">
+(() => {
+  const header = document.getElementById('navigation');
+  const toggle = header.querySelector('.nav__toggle');
+  const menu = header.querySelector('.nav__menu');
+  const close = header.querySelector('.nav__close');
+  const setOpen = open => {
+    menu.hidden = !open;
+    toggle.setAttribute('aria-expanded', String(open));
+    document.documentElement.style.overflow = open ? 'hidden' : '';
+    if (open) { window.lenis?.stop(); close.focus(); } else { window.lenis?.start(); toggle.focus(); }
+  };
+  toggle.addEventListener('click', () => setOpen(true));
+  close.addEventListener('click', () => setOpen(false));
+  menu.addEventListener('click', event => { if (event.target.closest('a')) { menu.hidden = true; toggle.setAttribute('aria-expanded', 'false'); document.documentElement.style.overflow = ''; window.lenis?.start(); } });
+  document.addEventListener('keydown', event => { if (event.key === 'Escape' && !menu.hidden) setOpen(false); });
+  let last = window.scrollY, ticking = false;
+  const update = () => {
+    ticking = false;
+    const y = window.scrollY, delta = y - last;
+    if (Math.abs(delta) < 4) return;
+    if (delta > 0 && y > 140 && !header.contains(document.activeElement)) header.setAttribute('data-hidden', '');
+    else if (delta < 0) header.removeAttribute('data-hidden');
+    last = y;
+  };
+  window.addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
+  header.addEventListener('focusin', () => header.removeAttribute('data-hidden'));
+})();
+</script>
+<script data-8b-part="motion-queue">
+(() => {
+  'use strict';
+  const fonts = document.fonts ? document.fonts.ready : Promise.resolve();
+  const parsed = document.readyState === 'loading' ? new Promise(resolve => document.addEventListener('DOMContentLoaded', resolve, { once: true })) : Promise.resolve();
+  const ready = () => Promise.all([fonts, parsed]).then(() => firsts);
+  const nextTask = () => window.scheduler?.yield?.() ?? new Promise(resolve => setTimeout(resolve));
+  const refresh = () => {
+    if (typeof window.refreshScroll === 'function') return window.refreshScroll();
+    window.ScrollTrigger?.sort(); window.ScrollTrigger?.refresh();
+  };
+  const run = (setup, name) => {
+    for (const trigger of window.ScrollTrigger?.getAll() || []) if (!trigger.end && window.ScrollTrigger.getAll().includes(trigger)) trigger.refresh(0, 1);
+    const context = window.gsap.context(() => {});
+    const log = new MutationObserver(() => {});
+    log.observe(document.documentElement, { attributes: true, attributeOldValue: true, subtree: true });
+    let failure = null, records;
+    try { context.add(() => { try { setup(); } catch (error) { failure = error; } }); }
+    finally { records = log.takeRecords(); log.disconnect(); }
+    if (!failure) return true;
+    try { context.revert(); } catch (error) { console.error(name, 'revert failed', error); }
+    for (const { target, attributeName, oldValue } of records.reverse()) {
+      const now = target.getAttribute(attributeName);
+      if (oldValue == null) { if (now != null) target.removeAttribute(attributeName); }
+      else if (now !== oldValue) target.setAttribute(attributeName, oldValue);
+    }
+    console.error(name, failure);
+    return false;
+  };
+  let firsts = Promise.resolve(), tail = null, pending = 0, lazy = null, building = 0, firstCount = 0;
+  window.motionReady = ready();
+  parsed.then(() => { if (firstCount && !tail) firsts.then(refresh); });
+  window.queueMotion = (setup, { first = false, near, id } = {}) => {
+    if (!window.gsap || typeof setup !== 'function') return;
+    const name = id || document.currentScript?.getAttribute('data-8b-part') || 'motion';
+    if (near instanceof Element && window.IntersectionObserver) {
+      const watch = new IntersectionObserver(entries => {
+        if (!entries.some(entry => entry.isIntersecting)) return;
+        watch.disconnect();
+        building++;
+        lazy = (lazy || ready()).then(nextTask).then(() => run(setup, name)).finally(() => { if (!--building) refresh(); });
+      }, { rootMargin: '100% 0px' });
+      watch.observe(near);
+      return;
+    }
+    if (first) { firstCount++; firsts = firsts.then(() => fonts).then(() => { if (!run(setup, name)) refresh(); }); }
+    else {
+      pending++;
+      tail = (tail || ready()).then(nextTask).then(() => run(setup, name))
+        .finally(() => { if (!--pending) refresh(); });
+    }
+    window.motionReady = Promise.all([firsts, tail]);
+  };
+})();
+</script>
+<script data-8b-part="page-init">
+gsap.registerPlugin(ScrollTrigger);
+function refreshScroll() {
+  const nav = document.getElementById('navigation');
+  document.documentElement.style.setProperty('--nav-h', nav.offsetHeight + 'px');
+  ScrollTrigger.sort();
+  ScrollTrigger.refresh();
+}
+gsap.matchMedia().add('(prefers-reduced-motion: no-preference)', () => {
+  const nav = document.getElementById('navigation');
+  const lenis = window.lenis = new Lenis({ lerp: 0.085, wheelMultiplier: 0.95, anchors: { offset: -nav.offsetHeight } });
+  const tick = time => lenis.raf(time * 1000);
+  lenis.on('scroll', ScrollTrigger.update);
+  gsap.ticker.add(tick);
+  gsap.ticker.lagSmoothing(0);
+  return () => { gsap.ticker.remove(tick); gsap.ticker.lagSmoothing(500, 33); lenis.destroy(); window.lenis = null; };
+});
+let resizeTimer;
+const onResize = () => { clearTimeout(resizeTimer); resizeTimer = setTimeout(refreshScroll, 200); };
+window.addEventListener('resize', onResize);
+window.addEventListener('orientationchange', () => { clearTimeout(resizeTimer); resizeTimer = setTimeout(refreshScroll, 250); });
+if (window.visualViewport) {
+  window.visualViewport.addEventListener('resize', onResize);
+}
+</script>
+<script data-8b-part="motion">
+const effects = {
+  resolve(frame, vars = {}) {
+    const img = frame.matches('img') ? frame : frame.querySelector('img');
+    const { k = 48, duration = 1.1, ease = 'power3.inOut', ...rest } = vars;
+    return gsap.timeline(rest).fromTo(img, { scaleX: k }, { scaleX: 1, duration, ease }, 0);
+  },
+  step(block, vars = {}) {
+    const items = block.children.length ? [...block.children] : [block];
+    return gsap.timeline(vars).from(items, { x: i => (i % 2 ? 1 : -1) * (36 + i * 18), duration: .9, ease: 'power3.out', stagger: .09 }, 0);
+  },
+  band(stripe, vars = {}) {
+    const { from = .06, duration = .9, ease = 'power2.inOut', ...rest } = vars;
+    return gsap.timeline(rest).fromTo(stripe, { scaleY: from }, { scaleY: 1, duration, ease }, 0);
+  }
+};
+['resolve', 'step', 'band'].forEach(name => {
+  document.querySelectorAll('[data-8b-section]').forEach(section => {
+    const elements = [...section.querySelectorAll(`[data-8b-motion~="${name}"]`)];
+    if (!elements.length) return;
+    const id = `effect:${name}:${section.id}`;
+    queueMotion(() => gsap.matchMedia().add('(prefers-reduced-motion: no-preference)', () => {
+      elements.forEach((element, index) => ScrollTrigger.create({
+        id: `${id}:${index}`, trigger: element, start: 'top 88%', once: true,
+        animation: effects[name](element, { paused: true })
+      }));
+    }), { first: section.getBoundingClientRect().top < innerHeight, id });
+  });
+});
+</script>
+<script data-8b-part="scene:opening">
+queueMotion(() => {
+  gsap.matchMedia().add('(prefers-reduced-motion: no-preference)', () => {
+    const section = document.getElementById('opening');
+    const slabs = [...section.querySelectorAll('.op__slab:not(.op__slab--gap)')];
+    const gap = section.querySelector('.op__slab--gap');
+    const floor = section.querySelector('.op__floor');
+    const blocks = [...section.querySelectorAll('.op__block')];
+    section.setAttribute('data-opening', '');
+    const stage = section.querySelector('.op__stage');
+    ScrollTrigger.create({ id: 'opening:loop', trigger: section, start: 'top bottom', end: 'bottom top', onToggle: self => stage.toggleAttribute('data-paused', !self.isActive) });
+    const num = (element, name) => parseFloat(getComputedStyle(element).getPropertyValue(name)) || 0;
+    const inset = (t, r, b, l) => `inset(${t}% ${r}% ${b}% ${l}%)`;
+    const right = el => +(99.8 - num(el, '--l') - num(el, '--w')).toFixed(2);
+    const timeline = gsap.timeline({
+      defaults: { ease: 'none' },
+      scrollTrigger: { id: 'opening', trigger: section, start: 'top top', end: 'bottom bottom', scrub: .7, invalidateOnRefresh: true }
+    });
+    blocks.forEach((block, index) => {
+      timeline.fromTo(block, { y: 0 }, { y: () => -innerHeight * (.26 - index * .09), duration: .4, ease: 'power1.in' }, 0);
+    });
+    slabs.forEach((slab, index) => {
+      const img = slab.querySelector('.op__img');
+      timeline.fromTo(slab,
+        { clipPath: () => inset(num(slab, '--t'), right(slab), num(slab, '--b'), num(slab, '--l')) },
+        { clipPath: () => inset(0, right(slab), 0, num(slab, '--l')), duration: .3, ease: 'power2.inOut' }, .03 + index * .022);
+      timeline.add(effects.resolve(img, { k: 64, duration: .3 }), .09 + index * .018);
+    });
+    timeline.fromTo(gap,
+      { clipPath: () => { const c = num(gap, '--l') + num(gap, '--w') / 2; return inset(0, +(100 - c).toFixed(2), 0, +c.toFixed(2)); } },
+      { clipPath: () => inset(0, +(100 - num(gap, '--l') - num(gap, '--w')).toFixed(2), 0, num(gap, '--l')), duration: .26, ease: 'power2.inOut' }, .16);
+    timeline.fromTo(floor,
+      { clipPath: () => inset(num(floor, '--f'), 0, 0, 0) },
+      { clipPath: 'inset(0% 0% 0% 0%)', duration: .44, ease: 'power1.inOut' }, .56);
+    return () => { section.removeAttribute('data-opening'); stage.removeAttribute('data-paused'); };
+  });
+}, { first: true });
+</script>
+<script data-8b-part="section-script:contact">
+(() => {
+  const form = document.querySelector('#contact .ct__form');
+  if (!form) return;
+  const status = form.querySelector('.ct__status');
+  form.addEventListener('submit', event => {
+    event.preventDefault();
+    const ok = ['name', 'email', 'plot'].every(name => form.elements[name].value.trim()) && form.elements.email.checkValidity();
+    status.textContent = ok ? status.dataset.sentText : status.dataset.errorText;
+    status.hidden = false;
+    if (ok) form.reset();
+  });
+})();
+</script>
+<script data-8b-part="scene:buildings">
+queueMotion(() => {
+  gsap.matchMedia().add('(prefers-reduced-motion: no-preference)', () => {
+    const section = document.getElementById('buildings');
+    const pin = section.querySelector('.bl__pin');
+    const track = section.querySelector('.bl__track');
+    const items = [...track.querySelectorAll('.bl__item')];
+    section.setAttribute('data-walk', '');
+    const distance = () => Math.max(0, track.scrollWidth - pin.clientWidth);
+    const walk = gsap.to(track, {
+      x: () => -distance(), ease: 'none',
+      scrollTrigger: { id: 'buildings', trigger: pin, start: 'top top', end: () => '+=' + distance(), pin: true, scrub: .6, invalidateOnRefresh: true, anticipatePin: 1 }
+    });
+    items.forEach((item, index) => {
+      const shift = item.querySelector('.bl__shift');
+      const img = shift && shift.querySelector('img');
+      if (!shift) return;
+      gsap.fromTo(shift, { xPercent: -6 }, { xPercent: 6, ease: 'none', scrollTrigger: { id: `buildings:depth-${index}`, trigger: item, containerAnimation: walk, start: 'left right', end: 'right left', scrub: true } });
+      effects.resolve(img, { k: 36, ease: 'power2.out', scrollTrigger: { id: `buildings:resolve-${index}`, trigger: item, containerAnimation: walk, start: 'left 102%', end: 'left 58%', scrub: true } });
+    });
+    return () => section.removeAttribute('data-walk');
+  });
+});
+</script>
+<script data-8b-part="scene:scan">
+queueMotion(() => {
+  gsap.matchMedia().add('(prefers-reduced-motion: no-preference)', () => {
+    const section = document.getElementById('scan');
+    const frame = section.querySelector('.sc__frame');
+    const smear = section.querySelector('.sc__smear');
+    const smearImg = smear.querySelector('img');
+    const line = section.querySelector('.sc__line');
+    const ticks = [...section.querySelectorAll('.sc__tick')];
+    const steps = [...section.querySelectorAll('.sc__step')];
+    const light = progress => {
+      const lit = Math.min(steps.length - 1, Math.floor(Math.min(progress / .8, .999) * steps.length));
+      steps.forEach((step, index) => step.toggleAttribute('data-lit', index === lit));
+      ticks.forEach((tick, index) => tick.toggleAttribute('data-lit', index <= lit));
+    };
+    const timeline = gsap.timeline({
+      defaults: { ease: 'none' },
+      scrollTrigger: { id: 'scan', trigger: section.querySelector('.sc__steps'), start: 'top 70%', end: 'bottom 55%', scrub: .5, invalidateOnRefresh: true, onUpdate: self => light(self.progress) }
+    });
+    timeline
+      .fromTo(line, { x: 0 }, { x: () => frame.clientWidth, duration: .8 }, 0)
+      .fromTo(smear, { clipPath: 'inset(0% 100% 0% 0%)' }, { clipPath: 'inset(0% 0% 0% 0%)', duration: .8 }, 0)
+      .fromTo(smearImg, { transformOrigin: '0% 50%' }, { transformOrigin: '100% 50%', duration: .8 }, 0)
+      .add(effects.resolve(smearImg, { k: 24, duration: .2, ease: 'power2.inOut' }), .8);
+    return () => { steps.forEach(step => step.removeAttribute('data-lit')); ticks.forEach(tick => tick.removeAttribute('data-lit')); };
+  });
+});
+</script>
+<script data-8b-part="scene:colours">
+queueMotion(() => {
+  gsap.matchMedia().add('(prefers-reduced-motion: no-preference)', () => {
+    const section = document.getElementById('colours');
+    const bands = [...section.querySelectorAll('.co__band')];
+    const timeline = gsap.timeline({
+      defaults: { ease: 'none' },
+      scrollTrigger: { id: 'colours', trigger: section.querySelector('.co__bands'), start: 'top 84%', end: 'bottom 86%', scrub: .6 }
+    });
+    bands.forEach((band, index) => {
+      const fill = band.querySelector('.co__fill');
+      const label = band.querySelector('.co__label');
+      timeline
+        .add(effects.band(fill, { from: .035, duration: 1 }), index * .5)
+        .fromTo(label, { clipPath: 'inset(0% 100% 0% 0%)', x: -48 }, { clipPath: 'inset(0% 0% 0% 0%)', x: 0, duration: .8, ease: 'power2.out' }, index * .5 + .35);
+    });
+  });
+});
+</script>
+<script data-8b-part="scene:floors">
+queueMotion(() => {
+  gsap.matchMedia().add('(prefers-reduced-motion: no-preference)', () => {
+    const section = document.getElementById('floors');
+    const frame = section.querySelector('.fl__frame');
+    const slices = [...section.querySelectorAll('.fl__slice')];
+    const floors = [...section.querySelectorAll('.fl__floor')];
+    const setters = slices.map(slice => gsap.quickSetter(slice, 'x', 'px'));
+    const last = slices.length - 1;
+    const apply = progress => {
+      const amplitude = Math.min(64, frame.clientWidth * .16);
+      const reading = progress * last;
+      const envelope = Math.sin(Math.PI * progress);
+      slices.forEach((slice, index) => setters[index](envelope * amplitude * Math.min(1, Math.abs(index - reading)) * (index % 2 ? 1 : -1)));
+      const active = Math.round(reading);
+      floors.forEach((floor, index) => floor.toggleAttribute('data-active', index === active));
+    };
+    ScrollTrigger.create({
+      id: 'floors', trigger: section.querySelector('.fl__list'), start: 'top 62%', end: 'bottom 62%',
+      onUpdate: self => apply(self.progress), onRefresh: self => apply(self.progress)
+    });
+    return () => { floors.forEach(floor => floor.removeAttribute('data-active')); gsap.set(slices, { clearProps: 'transform' }); };
+  });
+});
+</script>
+<script data-8b-part="scene:studio">
+queueMotion(() => {
+  gsap.matchMedia().add('(prefers-reduced-motion: no-preference)', () => {
+    const section = document.getElementById('studio'); if (!section) return;
+    const people = [...section.querySelectorAll('.st__person')];
+    const lifts = [-.2, .16, -.1, .24, -.15];
+    const timeline = gsap.timeline({
+      defaults: { ease: 'none' },
+      scrollTrigger: { id: 'studio', trigger: section.querySelector('.st__row'), start: 'top 88%', end: 'top 30%', scrub: .6, invalidateOnRefresh: true }
+    });
+    people.forEach((person, index) => {
+      const frame = person.querySelector('.st__frame');
+      const img = frame.querySelector('img');
+      timeline
+        .fromTo(frame, { y: () => innerHeight * lifts[index % lifts.length] }, { y: 0, duration: 1, ease: 'power2.out' }, index * .08)
+        .add(effects.resolve(img, { k: 40, duration: .7 }), .3 + index * .08);
+    });
+  });
+});
+</script>
+<script data-8b-part="scene:contact">
+queueMotion(() => {
+  gsap.matchMedia().add('(prefers-reduced-motion: no-preference)', () => {
+    const section = document.getElementById('contact');
+    const left = section.querySelector('.ct__slab--l');
+    const right = section.querySelector('.ct__slab--r');
+    const timeline = gsap.timeline({
+      defaults: { ease: 'none' },
+      scrollTrigger: { id: 'contact', trigger: section.querySelector('.ct__stage'), start: 'top 85%', end: 'top 20%', scrub: .6 }
+    });
+    timeline
+      .fromTo(left, { xPercent: -75 }, { xPercent: 0, duration: 1, ease: 'power2.out' }, 0)
+      .fromTo(right, { xPercent: 75 }, { xPercent: 0, duration: 1, ease: 'power2.out' }, 0)
+      .add(effects.resolve(left, { k: 50, duration: .75 }), .25)
+      .add(effects.resolve(right, { k: 50, duration: .75 }), .25);
+  });
+});
+</script>
+
+<script>
+(() => {
+  // If the user navigates with #opening or empty hash, clean it so it doesn't jump into mid-scroll
+  if (location.hash === '#opening' || location.hash === '#' || location.hash === '#/') {
+    history.replaceState(null, '', location.pathname);
+    window.scrollTo(0, 0);
+  }
+
+  // Smooth scroll to top when brand or Overview is clicked
+  document.querySelectorAll('a[href="#"], a[href="#opening"]').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      history.replaceState(null, '', location.pathname);
+      if (window.lenis) {
+        window.lenis.scrollTo(0, { duration: 1.2 });
+      } else {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    });
+  });
+})();
+</script>
+
+  <!-- React Main App Entry -->
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+</html>

@@ -1,0 +1,5 @@
+/* React Mount Container Styles */
+#root {
+  position: relative;
+  z-index: 999;
+}
