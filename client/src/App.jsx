@@ -3,7 +3,7 @@ import { createPortal } from 'react-dom';
 import StringTieFooter from '@/components/ui/string-tie-footer';
 import './App.css';
 
-const API_BASE = '';
+const API_BASE = import.meta.env.VITE_API_URL || '';
 
 function App() {
   const [backendStatus, setBackendStatus] = useState('checking');
